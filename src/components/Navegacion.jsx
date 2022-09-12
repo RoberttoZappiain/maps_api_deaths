@@ -1,5 +1,6 @@
 import React from 'react'
 import { Navbar, Button } from 'flowbite-react'
+import { NavLink } from 'react-router-dom'
 
 const Navegacion = () => {
     return (
@@ -13,7 +14,7 @@ const Navegacion = () => {
                         
                     </Navbar.Brand>
                     <div className="flex md:order-2">
-                        <a href="" className='inline-flex items-center rounded-lg border  py-2 px-4 text-center text-sm font-medium text-gray-400 '>+52 1 311 664 98</a>
+                        <a href="" className='inline-flex items-center  py-2 px-4 text-center text-sm font-medium text-gray-400 '>+52 1 311 664 98</a>
                        
                     </div>
                     <Navbar.Collapse>
@@ -54,12 +55,12 @@ const Navegacion = () => {
                     </Navbar.Brand>
                     <div className="flex md:order-2">
                        
-                        <a
-                            href="#"
+                        <NavLink
+                            to='/login'
                             className="inline-flex items-center rounded-lg border  py-2 px-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-500 focus:outline-none focus:ring-4 focus:text-white focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                         >
                             Acceder
-                        </a>
+                        </NavLink>
                     </div>
                     <div className="w-96 mx-auto">
                         

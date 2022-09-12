@@ -3,7 +3,7 @@ import { HiOutlineArrowRight } from 'react-icons/hi';
 import { GrClear } from 'react-icons/gr'
 import { FaSkullCrossbones } from 'react-icons/fa'
 import { GiMexico } from 'react-icons/gi'
-import { Sidebar, Button, Badge } from 'flowbite-react';
+import { Sidebar, Button, Badge,  } from 'flowbite-react';
 import { BsExclamationCircleFill } from 'react-icons/bs'
 import mexicoData from '../data/mexico.json'
 
@@ -13,21 +13,21 @@ const Aside = () => {
     borderColor: "#194D33"
   };
   return (
-    <div className="w-fit mt-3 containers">
+    <div className="w-fit containers" >
       <Sidebar aria-label="Sidebar with multi-level dropdown example "
       >
         <Sidebar.Items >
           <Sidebar.ItemGroup>
 
             <Sidebar.Item href="" icon={GiMexico}>
-              <span className="text-sm font-sans text-semibold mb-3 mt-5 text-gray-900  ">Filtrar por</span>
+              <span className="text-sm font-sans text-semibold text-gray-900  ">Filtrar por</span>
             </Sidebar.Item>
 
             <Sidebar.Collapse
               label="Estado"
             >
               {mexicoData.map(mxm => (
-                <Sidebar.Item href="#" >
+                <Sidebar.Item href="/register" >
                   {mxm.label}
                 </Sidebar.Item>
               ))}

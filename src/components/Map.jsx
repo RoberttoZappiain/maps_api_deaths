@@ -15,6 +15,7 @@ const Map = () => {
   const customMarkerIcon = divIcon({
     html: iconMarkup
   });
+
   return (
     <>     
      <MapContainer center={[19.34508941956005, -99.15325161549731]} zoom={6} scrollWheelZoom={true} >    
@@ -25,6 +26,7 @@ const Map = () => {
 
         {mexicoData.map(mxm => (
           <Marker
+         
             icon={customMarkerIcon}
             opacity={1}
             key={mxm.id}
