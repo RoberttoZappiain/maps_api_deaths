@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../App.css';
 import { MapContainer, TileLayer, Marker, SVGOverlay } from 'react-leaflet';
 import mexicoData from '../data/mexico.json'
 import { renderToStaticMarkup } from "react-dom/server";
 import { divIcon } from "leaflet";
+import { AppContext } from '../context/AppContext';
 
 
 const Map = () => {
+
+  const { setInformacion } = useContext(AppContext);
+
   console.log(mexicoData)
   
   const iconMarkup = renderToStaticMarkup(
@@ -15,6 +19,10 @@ const Map = () => {
   const customMarkerIcon = divIcon({
     html: iconMarkup
   });
+  
+  const onHandleMarker = () => {
+    setInformacion(true);
+  };
 
   return (
     <>     
@@ -30,8 +38,15 @@ const Map = () => {
             icon={customMarkerIcon}
             opacity={1}
             key={mxm.id}
+
+            eventHandlers={{
+              click: () => {
+                onHandleMarker();
+              },
+            }}
+
             position={[mxm.lat, mxm.lng]}>
-Map
+            Map
           </Marker>
         ))}
          
